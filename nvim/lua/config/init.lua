@@ -1,0 +1,5 @@
+require("config.remap")
+require("config.set")
+require("config.packer")
+require("mason").setup()
+require("config.template")
