@@ -1,28 +1,39 @@
 // -*- mode: jsonc -*-
 {
-    // "layer": "top", // Waybar at top layer
+    "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 17, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     "spacing": 5, // Gaps between modules (4px)
     // Choose the order of the modules
+    "exclusive": true,
+    "position": "top",
+    "reload_style_on_change": true,
     "modules-left": [
+        "hyprland/workspaces",
+        "tray"
     ],
     "modules-center": [
+        "custom/spotify"
     ],
     "modules-right": [
-        "mpd",
         "pulseaudio",
-        "network",
-        "cpu",
         "memory",
         "clock",
         "custom/power"
     ],
-    "modules-left": [
-        "hyprland/workspaces",
-        "hyprland/window"
-    ],
+    "custom/spotify": {
+        "format": "{icon} {}",
+        "escape": true,
+        "return-type": "json",
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "killall spotify",
+        "smooth-scrolling-threshold": 1, 
+        "on-scroll-up" : "playerctl -p spotify next",
+        "on-scroll-down" : "playerctl -p spotify previous",
+        "exec": "/home/oliver/.config/waybar/mediaplayer.py", // Script in resources/custom_modules folder
+        "exec-if": "pgrep spotify"
+    },
     "hyprland/workspaces": {
         "active-only" : false,
         "format": "{icon}",
@@ -78,7 +89,7 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "tray": {
-        // "icon-size": 21,
+        "icon-size": 17,
         "spacing": 10
     },
     "clock": {
@@ -91,7 +102,7 @@
         "tooltip": false
     },
     "memory": {
-        "format": "記憶 {}%"
+        "format": "\uf538 {}%"
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
@@ -121,23 +132,16 @@
         },
         "on-click": "pavucontrol"
     },
-    "custom/media": {
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
     },
     "custom/power": {
         "format" : "⏻ ",
 		"tooltip": false,
 		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+		"menu-file": "/home/oliver/.config/waybar/power_menu.xml",
 		"menu-actions": {
 			"shutdown": "shutdown",
 			"reboot": "reboot",
