@@ -1,0 +1,7 @@
+[keyboard]
+bindings = [
+{ key = "$", mode = "vi", action = "Last" },
+{ key = "c", mods = "Control" ,mode = "vi", action = "ClearSelection" },
+{ key = "_", mods = "Shift", mode = "vi", action = "First" },
+{ key = "p", mode = "vi", action = "PasteSelection" },
+]
