@@ -11,16 +11,13 @@
     "modules-center": [
     ],
     "modules-right": [
-        "bluetooth",
         "mpd",
         "pulseaudio",
         "network",
-        "power-profiles-daemon",
         "cpu",
         "memory",
-        "backlight",
-        "battery",
-        "clock"
+        "clock",
+        "custom/power"
     ],
     "modules-left": [
         "hyprland/workspaces",
@@ -96,38 +93,6 @@
     "memory": {
         "format": "記憶 {}%"
     },
-    "backlight": {
-        // "device": "acpi_video1",
-        "on-click": "~/.config/waybar/brightness_toggle",
-        "format": "光 {}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% 満",
-        "format-charging": "{capacity}% 上",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
@@ -136,18 +101,6 @@
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "bluetooth": {
-        "format-off": "不接続",
-        "format-on": "接続",
-        "format-connected": "接続数 {num_connections}",
-        "menu": "on-click",
-        "menu-file": "/home/oliver/.config/waybar/bluetooth.xml",
-        "menu-actions":{
-            "power": "(bluetoothctl show | grep 'Powered: yes' && bluetoothctl power off || bluetoothctl power on)",
-            "airpods": "bluetoothctl connect EC:73:79:57:31:27",
-            "scan": "kitty --hold bluetoothctl scan on"
-        }
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
