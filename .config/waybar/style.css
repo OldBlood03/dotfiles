@@ -5,9 +5,10 @@
 }
 
 window#waybar {
-    background-color: #000000;
+    background-color: #191724;
     color: #ffffff;
     transition-property: background-color;
+    opacity: 0.8;
     transition-duration: .5s;
 }
 
@@ -30,7 +31,7 @@ window#waybar.termite {
 }
 
 window#waybar.chromium {
-    background-color: #000000;
+    background-color: #191724;
     border: none;
 }
 
@@ -50,26 +51,22 @@ button:hover {
 
 /* you can set a style on hover for any module like this */
 #pulseaudio:hover {
-    background-color: #a37800;
+    background-color: #f6c177;
+    margin-left: 10px;
+    margin-right: 10px;
+    transition: all 0.1s ease-in-out;
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #000000;
+    border-radius: 12px;
+    color: #191724;
 }
 
 #workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
+    background: #f6c177;
+    transition: all 0.1s ease-in-out;
 }
 
 #mode {
@@ -87,7 +84,6 @@ button:hover {
 #network,
 #pulseaudio,
 #wireplumber,
-#custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -98,7 +94,7 @@ button:hover {
 #workspaces,
 #window{
     padding: 0 10px;
-    color: #ffffff;
+    color: #eb6f92 ;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -112,13 +108,20 @@ button:hover {
 }
 
 #clock {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    border-radius: 1000px;
+    color: #191724;
+}
+
+#clock:hover {
+    background-color: #f6c177;
+    margin-left: 10px;
+    transition: all 0.1s ease-in-out;
 }
 
 #battery {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    color: #191724;
 }
 
 #battery.charging, #battery.plugged {
@@ -129,7 +132,7 @@ button:hover {
 @keyframes blink {
     to {
         background-color: #ffffff;
-        color: #000000;
+        color: #191724;
     }
 }
 
@@ -160,21 +163,21 @@ button:hover {
 
 #power-profiles-daemon.power-saver {
     background-color: #2ecc71;
-    color: #000000;
+    color: #191724;
 }
 
 label:focus {
-    background-color: #000000;
+    background-color: #191724;
 }
 
 #cpu {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    color: #191724;
 }
 
 #memory {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    color: #191724;
 }
 
 #disk {
@@ -182,13 +185,13 @@ label:focus {
 }
 
 #backlight {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    color: #191724;
 }
 
 #network {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    color: #191724;
 }
 
 #network.disconnected {
@@ -196,8 +199,9 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    color: #191724;
+    border-radius: 1000px;
 }
 
 #pulseaudio.muted {
@@ -207,21 +211,27 @@ label:focus {
 
 #wireplumber {
     background-color: #fff0f5;
-    color: #000000;
+    color: #191724;
 }
 
 #wireplumber.muted {
     background-color: #f53c3c;
 }
 
-#custom-media {
-    background-color: #66cc99;
+#custom-spotify {
+    background-color: #eb6f92;
     color: #2a5c45;
+    opacity:1;
     min-width: 100px;
+    border-radius: 1000px;
 }
 
-#custom-media.custom-spotify {
-    background-color: #66cc99;
+#custom-spotify:hover {
+    background-color: #f6c177;
+    margin-right: 10px;
+    min-width: 130px;
+    border-radius:1000px;
+    transition: all 0.1s ease-in-out;
 }
 
 #custom-media.custom-vlc {
@@ -285,7 +295,7 @@ label:focus {
 
 #keyboard-state {
     background: #97e1ad;
-    color: #000000;
+    color: #191724;
     padding: 0 0px;
     margin: 0 0px;
     min-width: 16px;
@@ -334,8 +344,8 @@ label:focus {
 }
 
 #bluetooth {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    color: #191724;
 }
 
 menu {
@@ -349,13 +359,14 @@ menuitem {
 }
 
 #workspaces {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    color: #191724;
+    border-radius: 1000px;
 }
 
 #window {
-    background-color: #f1c40f;
-    color: #000000;
+    background-color: #eb6f92;
+    color: #191724;
 }
 
 window#waybar.empty #window {

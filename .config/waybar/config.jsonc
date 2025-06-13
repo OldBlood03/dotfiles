@@ -10,16 +10,14 @@
     "position": "top",
     "reload_style_on_change": true,
     "modules-left": [
-        "hyprland/workspaces",
-        "tray"
     ],
     "modules-center": [
-        "custom/spotify"
+        "custom/spotify",
+        "hyprland/workspaces",
+        "pulseaudio",
+        "clock"
     ],
     "modules-right": [
-        "pulseaudio",
-        "memory",
-        "clock",
         "custom/power"
     ],
     "custom/spotify": {
