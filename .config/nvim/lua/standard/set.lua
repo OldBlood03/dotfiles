@@ -27,6 +27,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+vim.cmd("set formatoptions-=cro")
 
 --disable mouse (i hate mouse)
 vim.opt.mouse = ""

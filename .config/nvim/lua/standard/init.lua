@@ -1,0 +1,5 @@
+require("standard.remap")
+require("standard.set")
+require("standard.packer")
+require("mason").setup()
+require("standard.template")

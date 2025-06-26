@@ -32,7 +32,7 @@ lspconfig["pylsp"].setup {
 }
 
 lspconfig.gdscript.setup{capabilities = capabilities}
-lspconfig.lua_ls.setup{capabilities = capabilities}
+lspconfig.lua_ls.setup{ capabilities = capabilities }
 
 vim.opt.signcolumn = 'yes'
 
@@ -56,3 +56,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
     end,
 })
+
