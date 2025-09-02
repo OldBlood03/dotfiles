@@ -1,2 +1,2 @@
 require("standard")
-require("assembler")
+--require("assembler")

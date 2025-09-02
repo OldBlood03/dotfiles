@@ -31,3 +31,20 @@ vim.keymap.set({"n", "v"}, "<leader>d", "\"_d")
 vim.keymap.set("i", "<C-c>", "<Esc>")
 
 vim.keymap.set("n", "Q", "<nop>")
+
+--for terminal mode
+vim.keymap.set ("n", "<leader>t","<CMD>Floaterm<CR>")
+vim.keymap.set("t", "<C-c>", [[ <C-\><C-n> ]])
+
+local netrw_tcd = function ()
+    local filetype = vim.api.nvim_get_option_value("filetype", {buf = vim.api.nvim_get_current_buf()})
+    if filetype == "netrw" then
+        local current_dir = vim.b.netrw_curdir
+        vim.cmd("tcd " .. current_dir)
+    else
+        vim.cmd("tcd %:p:h")
+    end
+end
+
+vim.keymap.set("n", "<leader>q", netrw_tcd)
+

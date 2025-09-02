@@ -1,8 +1,8 @@
 require("mason").setup()
---require("mason-lspconfig").setup({
---    ensure_installed = { "lua_ls", "clangd"},
---    automatic_installation = true,
---})
+require("mason-lspconfig").setup({
+    ensure_installed = { "lua_ls", "clangd"},
+    automatic_installation = true,
+})
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = vim.tbl_deep_extend("force", capabilities, require('cmp_nvim_lsp').default_capabilities())
@@ -32,7 +32,8 @@ lspconfig["pylsp"].setup {
 }
 
 lspconfig.gdscript.setup{capabilities = capabilities}
-lspconfig.lua_ls.setup{ capabilities = capabilities }
+lspconfig.lua_ls.setup{capabilities = capabilities}
+lspconfig.clangd.setup{capabilities = capabilities}
 
 vim.opt.signcolumn = 'yes'
 
@@ -50,7 +51,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
         vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
         vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-        vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+        vim.keymap.set('n', 'gs', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
         vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
         vim.keymap.set({'n', 'x'}, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
         vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
