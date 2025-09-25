@@ -32,6 +32,7 @@ lspconfig["pylsp"].setup {
 }
 
 lspconfig.lua_ls.setup{capabilities = capabilities}
+lspconfig.clangd.setup{capabilities = capabilities}
 
 vim.opt.signcolumn = 'yes'
 
