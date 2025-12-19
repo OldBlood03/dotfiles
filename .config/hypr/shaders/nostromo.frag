@@ -189,11 +189,13 @@ void main() {
     uv = CRTCurveUV( uv );
     uv = CRTWiggle( uv );
     //uv = CRTWaveActual( uv );
+    //uv = CRTWaveSmooth( uv );
 
     vec4 color  = texture( tex, uv );
     CRTChromaticAberrationKernel(color.xyz, uv);
-    color.rgb -= 0.05;
     //color.rgb = CRTGlow( uv );
+    if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0)
+        color.rgb = vec3 (0.0);
 
     CRTVignette( color.xyz, uv, 0.1 );
     CRTScanline( color.xyz, uv );
