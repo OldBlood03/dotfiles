@@ -88,7 +88,7 @@ vec2 CRTCurveUV( vec2 uv ){
 
 vec2 CRTWaveActual ( vec2 uv ){
     const float intensity = 0.01;
-    const float period = 10.0;
+    const float period = 1.0;
     float distortion = smoothstep(0.999, 1.0, pow(sin((uv.y + time * (1.0 + (1.0/period))) * 1.0/period), period*3.0)) * intensity;
     distortion -= smoothstep(0.999, 1.0, pow(sin((uv.y + time) * 1.0/period), period*3.0)) * intensity;
     uv.x += distortion;
@@ -130,9 +130,9 @@ void CRTChromaticAberrationKernel(inout vec3 color, vec2 uv){
 }
 
 vec2 CRTWiggle ( vec2 uv ){
-    const float intensity = 0.0001;
+    const float intensity = 0.2;
     vec2 pixel_to_uv = 1.0 / screenSize;
-    float distortion = gnoise(vec3(0.0, uv.y*pixel_to_uv.y * 0.01, time * 500.0)) * (intensity * 4.0);
+    float distortion = gnoise(vec3(0.0001, uv.y*pixel_to_uv.y * 0.05, time * 500.0)) * (intensity * 4.0);
     uv.x += distortion;
     return uv;
 }

@@ -1,4 +1,7 @@
 vim.cmd("colorscheme desert")
+--for nostromo colorscheme it is easier to use the 
+--defaults of desert and change the background and normal tex colors
+vim.cmd("hi Normal guifg=#00ff7a ctermbg=NONE guibg=#0a0a0a gui=NONE")
 vim.opt.guicursor = ""
 
 vim.opt.nu = true
@@ -27,10 +30,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
-
---disable mouse (i hate mouse)
 vim.opt.mouse = ""
---vim.opt.foldmethod = "indent"
---vim.opt.foldlevel = 99
---vim.opt.foldlevelstart = 0
---vim.opt.foldnestmax = 2
