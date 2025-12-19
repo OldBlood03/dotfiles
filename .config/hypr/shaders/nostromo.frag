@@ -1,7 +1,4 @@
 #version 300 es
-//TODO
-//make the glitch effect
-//make scanline less uniform, looks pretty awful
 
 precision mediump float;
 in vec2 v_texcoord;
