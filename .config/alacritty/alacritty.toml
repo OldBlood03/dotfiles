@@ -1,3 +1,6 @@
+[font]
+normal = {family = "monospace", style = "regular"}
+
 [keyboard]
 bindings = [
 { key = "$", mode = "vi", action = "Last" },
