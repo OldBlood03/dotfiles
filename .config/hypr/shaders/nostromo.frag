@@ -130,7 +130,7 @@ void CRTChromaticAberrationKernel(inout vec3 color, vec2 uv){
 }
 
 vec2 CRTWiggle ( vec2 uv ){
-    const float intensity = 0.2;
+    const float intensity = 0.0001;
     vec2 pixel_to_uv = 1.0 / screenSize;
     float distortion = gnoise(vec3(0.0001, uv.y*pixel_to_uv.y * 0.05, time * 500.0)) * (intensity * 4.0);
     uv.x += distortion;
@@ -184,6 +184,10 @@ vec3 CRTGlow (vec2 uv){
     return accumulatedColor*0.5;
 }
 
+float Gaussian (float x, float mu, float sigma){
+    return 1.0/sigma/sqrt(2.0 * 3.14) * exp(-0.5 * ((x - mu) / sigma) * ((x - mu) / sigma));
+}
+
 void main() {
     vec2 uv = v_texcoord.xy;
     uv = CRTCurveUV( uv );
@@ -201,5 +205,10 @@ void main() {
     CRTScanline( color.xyz, uv );
     CRTStatic  ( color.xyz, uv, vec3(0.1, 0.11, 0.09), 5.0 );
 
-    fragColor.xyz = color.xyz;
+    float max_val = max(color.r, max(color.g, color.b));
+    float dampener = mix(1.0, 0.5, smoothstep(0.0, 1.0, max_val));
+    color.rgb *= dampener;
+    color.rgb *= 1.1;
+
+    fragColor.rgb = color.rgb;
 }
