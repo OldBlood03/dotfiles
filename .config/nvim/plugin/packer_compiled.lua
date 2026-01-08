@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/oliver/.local/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
+  ["telescope-zoxide"] = {
+    loaded = true,
+    path = "/home/oliver/.local/nvim/site/pack/packer/start/telescope-zoxide",
+    url = "https://github.com/jvgrootveld/telescope-zoxide"
+  },
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/oliver/.local/nvim/site/pack/packer/start/telescope.nvim",

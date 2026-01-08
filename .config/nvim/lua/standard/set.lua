@@ -35,3 +35,4 @@ vim.opt.mouse = ""
 --vim.opt.foldlevel = 99
 --vim.opt.foldlevelstart = 0
 --vim.opt.foldnestmax = 2
+vim.cmd("let g:netrw_home = '" .. os.getenv("HOME") .. "/.vim/netrw_home'")
