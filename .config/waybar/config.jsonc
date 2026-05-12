@@ -10,6 +10,8 @@
 	],
 
 	"modules-right": [
+        "custom/arrow11",
+        "power-profiles-daemon",
 		"custom/arrow9",
 		"pulseaudio",
 		"custom/arrow8",
@@ -33,6 +35,17 @@
 
 	// Modules
 
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
 	"battery": {
 		"interval": 10,
 		"states": {
@@ -208,7 +221,11 @@
 	"custom/arrow10": {
 		"format": "",
 		"tooltip": false
-	}
+	},
+    "custom/arrow11": {
+        "format": "",
+        "tooltip": false
+    }
 }
 
 // vi:ft=jsonc

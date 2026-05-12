@@ -69,6 +69,7 @@
 
 /* Each module */
 #battery,
+#power-profiles-daemon,
 #clock,
 #cpu,
 #language,
@@ -158,6 +159,11 @@
 #pulseaudio {
 	background: @sound;
 	color: @black;
+}
+
+#power-profiles-daemon {
+	background: @braqua;
+	color: @white;
 }
 
 #network {
@@ -255,11 +261,17 @@
 #custom-arrow9 {
 	font-size: 11pt;
 	color: @sound;
-	background: transparent;
+	background: @braqua;
 }
 
 #custom-arrow10 {
 	font-size: 11pt;
 	color: @unfocused;
+	background: transparent;
+}
+
+#custom-arrow11 {
+	font-size: 11pt;
+	color: @braqua;
 	background: transparent;
 }
