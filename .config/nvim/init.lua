@@ -1,2 +1,2 @@
-require("standard")
+require("config")
 --require("assembler")
